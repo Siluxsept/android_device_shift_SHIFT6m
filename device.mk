@@ -13,6 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# call the common setup
+$(call inherit-product, device/shift/mt6797-common/common.mk)
+
+# call the proprietary setup
+$(call inherit-product, vendor/shift/SHIFT6m/SHIFT6m-vendor.mk)
+
 # overlay has priorities. high <-> low.
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -30,8 +36,3 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
-# call the common setup
-$(call inherit-product, device/shift/mt6797-common/common.mk)
-
-# call the proprietary setup
-$(call inherit-product, vendor/shift/SHIFT6m/SHIFT6m-vendor.mk)
